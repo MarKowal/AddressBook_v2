@@ -15,3 +15,8 @@ int Ksiazka_adresowa::logowanieUzytkownika()
     uzytkownikMenedzer.logowanieUzytkownika();
 }
 
+void Ksiazka_adresowa::zmianaHaslaZalogowanegoUzytkownika()
+{
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
+}
+
