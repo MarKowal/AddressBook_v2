@@ -20,3 +20,7 @@ void Ksiazka_adresowa::zmianaHaslaZalogowanegoUzytkownika()
     uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
 }
 
+int Ksiazka_adresowa::wylogowanieUzytkownika()
+{
+    uzytkownikMenedzer.wylogowanieUzytkownika();
+}

@@ -95,10 +95,10 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                 if (itr -> pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
-                    cout<<"/sprawdzenie/ ID zalogowanego Uzytkownika: "<<itr -> pobierzID()<<endl;
                     idZalogowanegoUzytkownika = itr -> pobierzID();
+                    cout<<"/sprawdzenie/ ID zalogowanego Uzytkownika: "<<idZalogowanegoUzytkownika<<endl;
                     system("pause");
-                    return itr -> pobierzID();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -129,3 +129,11 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
+
+int UzytkownikMenedzer::wylogowanieUzytkownika()
+{
+    idZalogowanegoUzytkownika=0;
+    cout<<"/sprawdzenie/ ID po wylogowaniu Uzytkownika: "<<idZalogowanegoUzytkownika<<endl;
+    return idZalogowanegoUzytkownika;
+}
+
