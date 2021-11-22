@@ -24,3 +24,9 @@ int Ksiazka_adresowa::wylogowanieUzytkownika()
 {
     uzytkownikMenedzer.wylogowanieUzytkownika();
 }
+
+int Ksiazka_adresowa::dodajAdresata()
+{
+    cout<<"uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika= "<<uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika()<<endl;
+    adresatMenedzer.dodajAdresata(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+}
