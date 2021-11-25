@@ -31,8 +31,6 @@ class AdresatMenedzer
 
 public:
     AdresatMenedzer();
-    void ustawIdOstatniegoAdresata(int noweIdOstatniegoAdresata);
-
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int dodajAdresata(int idZalogowanegoUzytkownika);
     void wyswietlAdresatowZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);

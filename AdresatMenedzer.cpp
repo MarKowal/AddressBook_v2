@@ -5,11 +5,6 @@ AdresatMenedzer::AdresatMenedzer()
     idOstatniegoAdresata=0;
 }
 
-void AdresatMenedzer::ustawIdOstatniegoAdresata(int noweIdOstatniegoAdresata)
-{
-    idOstatniegoAdresata=noweIdOstatniegoAdresata;
-}
-
 int AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
     PlikZAdresatami plikZAdresatami;
