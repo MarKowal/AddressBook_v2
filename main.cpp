@@ -10,14 +10,10 @@ int main()
 
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
     ksiazkaAdresowa.logowanieUzytkownika();
-    ksiazkaAdresowa.dodajAdresata();
-    ksiazkaAdresowa.dodajAdresata();
+    ksiazkaAdresowa.wyswietlAdresatowZalogowanegoUzytkownika();
     ksiazkaAdresowa.wylogowanieUzytkownika();
     ksiazkaAdresowa.logowanieUzytkownika();
-    ksiazkaAdresowa.dodajAdresata();
-    ksiazkaAdresowa.dodajAdresata();
-
-
+    ksiazkaAdresowa.wyswietlAdresatowZalogowanegoUzytkownika();
 
     return 0;
 }

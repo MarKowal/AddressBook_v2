@@ -21,12 +21,11 @@ public:
     }
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    int logowanieUzytkownika();
+    void logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-    int wylogowanieUzytkownika();
-    int dodajAdresata();
-
-
+    void wylogowanieUzytkownika();
+    void dodajAdresata();
+    void wyswietlAdresatowZalogowanegoUzytkownika();
 };
 
 #endif

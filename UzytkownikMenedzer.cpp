@@ -78,6 +78,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     Uzytkownik uzytkownik;
     string login = "";
     string haslo = "";
+    PlikZAdresatami plikZAdresatami;
 
     cout << endl << "Podaj login: ";
     login = wczytajLinie();
@@ -96,7 +97,6 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     idZalogowanegoUzytkownika = itr -> pobierzID();
-                    cout<<"/sprawdzenie/ ID zalogowanego Uzytkownika: "<<idZalogowanegoUzytkownika<<endl;
                     system("pause");
                     return idZalogowanegoUzytkownika;
                 }
@@ -133,7 +133,7 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 int UzytkownikMenedzer::wylogowanieUzytkownika()
 {
     idZalogowanegoUzytkownika=0;
-    cout<<"/sprawdzenie/ ID po wylogowaniu Uzytkownika: "<<idZalogowanegoUzytkownika<<endl;
+    cout<<"ID po wylogowaniu Uzytkownika= "<<idZalogowanegoUzytkownika<<endl;
     return idZalogowanegoUzytkownika;
 }
 
