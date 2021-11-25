@@ -10,9 +10,10 @@ void Ksiazka_adresowa::wypiszWszystkichUzytkownikow()
     uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
 }
 
-int Ksiazka_adresowa::logowanieUzytkownika()
+void Ksiazka_adresowa::logowanieUzytkownika()
 {
     uzytkownikMenedzer.logowanieUzytkownika();
+    adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
 }
 
 void Ksiazka_adresowa::zmianaHaslaZalogowanegoUzytkownika()
@@ -20,13 +21,18 @@ void Ksiazka_adresowa::zmianaHaslaZalogowanegoUzytkownika()
     uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
 }
 
-int Ksiazka_adresowa::wylogowanieUzytkownika()
+void Ksiazka_adresowa::wylogowanieUzytkownika()
 {
     uzytkownikMenedzer.wylogowanieUzytkownika();
 }
 
-int Ksiazka_adresowa::dodajAdresata()
+void Ksiazka_adresowa::dodajAdresata()
 {
-    cout<<"uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika= "<<uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika()<<endl;
     adresatMenedzer.dodajAdresata(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+}
+
+void Ksiazka_adresowa::wyswietlAdresatowZalogowanegoUzytkownika()
+{
+    adresatMenedzer.wyswietlAdresatowZalogowanegoUzytkownika(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+
 }

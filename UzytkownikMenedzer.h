@@ -7,6 +7,8 @@
 
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
+#include "PlikZAdresatami.h"
+
 
 using namespace std;
 
@@ -29,7 +31,6 @@ public:
     void wczytajUzytkownikowZPliku();
     void zmianaHaslaZalogowanegoUzytkownika();
     int wylogowanieUzytkownika();
-
     int pobierzIdZalogowanegoUzytkownika();
 
 };

@@ -26,12 +26,16 @@ class AdresatMenedzer
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
     string wczytajLinie();
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    void wyswietlDaneAdresata(Adresat adresat, int idZalogowanegoUzytkownika);
+
 
 public:
     AdresatMenedzer();
-    int dodajAdresata(int idZalogowanegoUzytkownika);
-    void wyswietlWszystkichAdresatow();
+    void ustawIdOstatniegoAdresata(int noweIdOstatniegoAdresata);
 
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    int dodajAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlAdresatowZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
 };
 
 #endif
