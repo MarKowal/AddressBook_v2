@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <vector>
-#include <windows.h>
 
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
@@ -24,11 +23,13 @@ class UzytkownikMenedzer
     string wczytajLinie();
 
 public:
-    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami)
+    {
+        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    }
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
     void zmianaHaslaZalogowanegoUzytkownika();
     int wylogowanieUzytkownika();
     int pobierzIdZalogowanegoUzytkownika();
