@@ -6,16 +6,14 @@
 #include <fstream>
 
 #include "Adresat.h"
-#include "AdresatMenedzer.h"
 #include "MetodyPomocnicze.h"
-#include "UzytkownikMenedzer.h"
-
 
 using namespace std;
 
 class PlikZAdresatami
 {
     string nazwaPlikuZAdresatami;
+    int idOstatniegoAdresata;
 
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     bool czyPlikJestPusty(fstream &plikTekstowy);
@@ -28,7 +26,9 @@ class PlikZAdresatami
 public:
     PlikZAdresatami();
     void dopiszAdresataDoPliku(Adresat adresat);
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika,  vector <Adresat> &adresaci);
+    vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    int pobierzIdOstatniegoAdresata();
+
 
 };
 

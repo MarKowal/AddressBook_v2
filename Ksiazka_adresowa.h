@@ -12,10 +12,19 @@ using namespace std;
 class Ksiazka_adresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
-    AdresatMenedzer adresatMenedzer;
+    AdresatMenedzer *adresatMenedzer;
+
 
 public:
-    Ksiazka_adresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami){};
+    Ksiazka_adresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami)
+    {
+        adresatMenedzer = NULL;
+    };
+    ~Ksiazka_adresowa()
+    {
+        delete adresatMenedzer;
+        adresatMenedzer = NULL;
+    };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();
