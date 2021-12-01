@@ -1,15 +1,17 @@
 #include <iostream>
 
-#include "Ksiazka_adresowa.h"
+#include "KsiazkaAdresowa.h"
 
 using namespace std;
 
 int main()
 {
-    Ksiazka_adresowa ksiazkaAdresowa("Uzytkownicy_wersja2.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
     ksiazkaAdresowa.logowanieUzytkownika();
+    ksiazkaAdresowa.dodajAdresata();
     ksiazkaAdresowa.wyswietlAdresatowZalogowanegoUzytkownika();
+    ksiazkaAdresowa.wylogowanieUzytkownika();
 
     return 0;
 }

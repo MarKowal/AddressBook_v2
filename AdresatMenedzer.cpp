@@ -1,7 +1,8 @@
 #include "AdresatMenedzer.h"
 
 
-AdresatMenedzer::AdresatMenedzer(int idZalogowanegoUzytkownika)
+AdresatMenedzer::AdresatMenedzer(int idZalogowanegoUzytkownika, string nazwaPlikuZAdresatami)
+: plikZAdresatami(nazwaPlikuZAdresatami)
 {
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }
@@ -26,7 +27,7 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
     cout << "Podaj imie: ";
     imie = MetodyPomocnicze::wczytajLinie();
     imie = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(imie);
-    cout<<"plikZAdresatami.pobierzIdOstatniegoAdresata()= "<<plikZAdresatami.pobierzIdOstatniegoAdresata()<<endl;
+
     cout << "Podaj nazwisko: ";
     nazwisko = MetodyPomocnicze::wczytajLinie();
     nazwisko = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwisko);

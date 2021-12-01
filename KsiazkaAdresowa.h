@@ -1,5 +1,5 @@
-#ifndef KSIAZKA_ADRESOWA_H
-#define KSIAZKA_ADRESOWA_H
+#ifndef KSIAZKAADRESOWA_H
+#define KSIAZKAADRESOWA_H
 
 #include <iostream>
 
@@ -9,18 +9,20 @@
 
 using namespace std;
 
-class Ksiazka_adresowa
+class KsiazkaAdresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
     AdresatMenedzer *adresatMenedzer;
+    const string NAZWA_PLIKU_Z_ADRESATAMI;
 
 
 public:
-    Ksiazka_adresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami)
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)
+    : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
     {
         adresatMenedzer = NULL;
     };
-    ~Ksiazka_adresowa()
+    ~KsiazkaAdresowa()
     {
         delete adresatMenedzer;
         adresatMenedzer = NULL;

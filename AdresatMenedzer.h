@@ -20,7 +20,7 @@ class AdresatMenedzer
     void wyswietlDaneAdresata(Adresat adresat, int idZalogowanegoUzytkownika);
 
 public:
-    AdresatMenedzer(int idZalogowanegoUzytkownika);
+    AdresatMenedzer(int idZalogowanegoUzytkownika, string nazwaPlikuZAdresatami);
     void dodajAdresata(int idZalogowanegoUzytkownika);
     void wyswietlAdresatowZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
 };

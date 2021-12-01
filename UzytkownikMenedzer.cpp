@@ -66,7 +66,6 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     Uzytkownik uzytkownik;
     string login = "";
     string haslo = "";
-    PlikZAdresatami plikZAdresatami;
 
     cout << endl << "Podaj login: ";
     login = MetodyPomocnicze::wczytajLinie();

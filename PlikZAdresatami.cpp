@@ -1,9 +1,9 @@
 #include "PlikZAdresatami.h"
 
 
-PlikZAdresatami::PlikZAdresatami()
+PlikZAdresatami::PlikZAdresatami(string nazwaPlikuZAdresatami)
+: NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
 {
-    nazwaPlikuZAdresatami = "Adresaci.txt";
     idOstatniegoAdresata=0;
 }
 
@@ -11,7 +11,7 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 {
     fstream plikTekstowy;
     string liniaZDanymiAdresata = "";
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::out | ios::app);
+    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::out | ios::app);
 
     if (plikTekstowy.good() == true)
     {
@@ -65,7 +65,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
+    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
 
     if (plikTekstowy.good() == true)
     {
@@ -85,7 +85,6 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     {
         idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
     }
-    cout<<"SPR idOstatniegoAdresata po wczytajAdresatow= "<<idOstatniegoAdresata<<endl;
     return adresaci;
 }
 
