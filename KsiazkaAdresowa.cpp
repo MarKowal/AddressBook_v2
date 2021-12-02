@@ -38,3 +38,9 @@ void KsiazkaAdresowa::wyswietlAdresatowZalogowanegoUzytkownika()
     adresatMenedzer->wyswietlAdresatowZalogowanegoUzytkownika(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
 
 }
+
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
+{
+    if (uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika()==0) return true;
+    else return false;
+}

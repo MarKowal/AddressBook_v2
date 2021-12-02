@@ -34,6 +34,8 @@ public:
     void wylogowanieUzytkownika();
     void dodajAdresata();
     void wyswietlAdresatowZalogowanegoUzytkownika();
+    bool czyUzytkownikJestZalogowany();
+
 };
 
 #endif
