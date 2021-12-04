@@ -39,6 +39,16 @@ void KsiazkaAdresowa::wyswietlAdresatowZalogowanegoUzytkownika()
 
 }
 
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+    adresatMenedzer->wyszukajAdresatowPoImieniu(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
+{
+    adresatMenedzer->wyszukajAdresatowPoNazwisku(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+}
+
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 {
     if (uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika()==0) return true;
