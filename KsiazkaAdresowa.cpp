@@ -54,3 +54,8 @@ bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
     if (uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika()==0) return true;
     else return false;
 }
+
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatMenedzer->usunAdresata(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+}

@@ -14,11 +14,6 @@ class Menu
 public:
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
-
-            //static????
-
-
-
 };
 
 #endif
