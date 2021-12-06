@@ -18,6 +18,8 @@ class AdresatMenedzer
 
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
     void wyswietlDaneAdresata(Adresat adresat, int idZalogowanegoUzytkownika);
+    int podajIdWybranegoAdresata();
+
 
 public:
     AdresatMenedzer(int idZalogowanegoUzytkownika, string nazwaPlikuZAdresatami);
@@ -26,6 +28,7 @@ public:
     void wyszukajAdresatowPoImieniu(int idZalogowanegoUzytkownika);
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
     void wyszukajAdresatowPoNazwisku(int idZalogowanegoUzytkownika);
+    int usunAdresata(int idZalogowanegoUzytkownika);
 
 };
 
