@@ -7,7 +7,7 @@
 
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
-
+#include "Menu.h"
 
 using namespace std;
 
@@ -19,6 +19,7 @@ class AdresatMenedzer
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
     void wyswietlDaneAdresata(Adresat adresat, int idZalogowanegoUzytkownika);
     int podajIdWybranegoAdresata();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
 
 
 public:
@@ -29,7 +30,7 @@ public:
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
     void wyszukajAdresatowPoNazwisku(int idZalogowanegoUzytkownika);
     int usunAdresata(int idZalogowanegoUzytkownika);
-
+    void edytujAdresata(int idZalogowanegoUzytkownika);
 };
 
 #endif

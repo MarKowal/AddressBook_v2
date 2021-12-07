@@ -5,6 +5,7 @@ PlikZAdresatami::PlikZAdresatami(string nazwaPlikuZAdresatami)
 : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
 {
     idOstatniegoAdresata=0;
+    nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
 }
 
 void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
@@ -156,7 +157,7 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanegoAdresata)
 {
     fstream odczytywanyPlikTekstowy;
     fstream tymczasowyPlikTekstowy;
-    string nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
+    //string nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
     string wczytanaLinia = "";
 
     odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
@@ -206,7 +207,6 @@ void PlikZAdresatami::zmienNazwePliku(string staraNazwa, string nowaNazwa)
 
 int PlikZAdresatami::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata)
 {
-    cout<<"/spr/ idUsuwanegoAdresata w plik = "<<idUsuwanegoAdresata<<endl;
     system("pause");
     if (idUsuwanegoAdresata == idOstatniegoAdresata)
         return pobierzZPlikuIdOstatniegoAdresata();
@@ -235,4 +235,49 @@ int PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata()
         idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
     }
     return idOstatniegoAdresata;
+}
+
+void PlikZAdresatami::edytujWybranaLinieWPliku(string liniaZDanymiAdresataOddzielonePionowymiKreskami, Adresat adresat)
+{
+    fstream odczytywanyPlikTekstowy;
+    fstream tymczasowyPlikTekstowy;
+   // string nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
+    string wczytanaLinia = "";
+    int numerWczytanejLinii = 1;
+
+    odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+    tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
+
+    if (odczytywanyPlikTekstowy.good() == true)
+    {
+        while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
+        {
+           if(adresat.pobierzIdAdresata() == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia))
+           {
+                if (czyPlikJestPusty(tymczasowyPlikTekstowy) == true)
+                {
+                    tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami;
+                }
+                else
+                {
+                    tymczasowyPlikTekstowy << endl << liniaZDanymiAdresataOddzielonePionowymiKreskami;
+                }
+           }
+            else
+
+                if (czyPlikJestPusty(tymczasowyPlikTekstowy) == true)
+                {
+                    tymczasowyPlikTekstowy << wczytanaLinia;
+                }
+                else
+                {
+                    tymczasowyPlikTekstowy << endl << wczytanaLinia;
+                }
+        }
+        odczytywanyPlikTekstowy.close();
+        tymczasowyPlikTekstowy.close();
+
+        usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
+        zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, NAZWA_PLIKU_Z_ADRESATAMI);
+    }
 }
