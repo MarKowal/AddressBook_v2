@@ -215,7 +215,6 @@ void AdresatMenedzer::edytujAdresata(int idZalogowanegoUzytkownika)
     Adresat adresat;
     Menu menu;
     int idEdytowanegoAdresata = 0;
-   // int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
 
     cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
